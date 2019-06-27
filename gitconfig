@@ -1,0 +1,7 @@
+[user]
+	email = github@lostgeek.de
+	name = Oguz Han Asnaz
+[push]
+	default = simple
+[core]
+	excludesfile = ~/.gitignore
