@@ -128,6 +128,8 @@ noremap + <C-]>
 " Netrunner development {{{
 map <leader>no mZ?deftest<cr>wi^:test-refresh/focus <esc>'ZmZ
 map <leader>ni mZ?deftest<cr>wdf <esc>'ZmZ
+map <leader>nt :Exp ~/devel/netrunner/test/clj/game_test<cr>
+map <leader>nn :Exp ~/devel/netrunner/src/clj/game<cr>
 "}}}
 
 "" PLUGINS {{{
