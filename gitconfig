@@ -2,6 +2,8 @@
 	email = github@lostgeek.de
 	name = Oguz Han Asnaz
 [push]
-	default = simple
+	default = current
 [core]
 	excludesfile = ~/.gitignore
+[credential]
+	helper = libsecret
