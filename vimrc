@@ -2,10 +2,63 @@
 "" .vimrc
 ""
 
+
+"" PLUGINS {{{
+call plug#begin('~/.vim/plugged')
+" Airline {{{
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#gutentags#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_detect_modified = 1
+let g:airline_detect_paste = 1
+let g:airline_detect_iminsert = 1
+
+let g:airline_theme='tomorrow'
+"}}}
+" Rainbow Parentheses {{{
+Plug 'luochen1990/rainbow'
+
+let g:rainbow_active = 0
+map <leader>rp :RainbowToggle<CR>
+autocmd BufEnter *.clj RainbowToggleOn
+"}}}
+" Gutentags + Tagbar {{{
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+
+nmap <leader>tt :TagbarToggle<CR><C-W>l
+let g:tagbar_autoclose = 1
+let g:gutentags_cache_dir = "~/.vim-cache/tags"
+" nnoremap <C-]> <C-w><C-]><C-W>T
+" vnoremap <C-]> <Esc><C-w><C-]><C-W>T
+"}}}
+" Signature (marks) {{{
+Plug 'kshenoy/vim-signature'
+" }}}
+" NERD Commenter {{{
+Plug 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+"}}}
+" undotree {{{
+Plug 'https://github.com/mbbill/undotree.git'
+nmap <leader>ut :UndotreeToggle<CR>
+"}}}
+" onedark theme {{{
+Plug 'joshdick/onedark.vim'
+"}}}
+call plug#end()
+"}}}
+
 " basics {{{
 set t_Co=256            " set 256 color
 set nocompatible        " use Vim defaults
-colorscheme Tomorrow-Night    " define syntax color scheme
+colorscheme onedark     " set colorscheme
 set showmatch           " show matching brackets (),{},[]
 set mat=5               " show matching brackets for 0.5 seconds
 set nu rnu              " show hybrid line numbers
@@ -130,55 +183,6 @@ map <leader>no mZ?deftest<cr>wi^:test-refresh/focus <esc>'ZmZ
 map <leader>ni mZ?deftest<cr>wdf <esc>'ZmZ
 map <leader>nt :Exp ~/devel/netrunner/test/clj/game_test<cr>
 map <leader>nn :Exp ~/devel/netrunner/src/clj/game<cr>
-"}}}
-
-"" PLUGINS {{{
-call plug#begin('~/.vim/plugged')
-" Airline {{{
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#gutentags#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_detect_modified = 1
-let g:airline_detect_paste = 1
-let g:airline_detect_iminsert = 1
-
-let g:airline_theme='tomorrow'
-"}}}
-" Rainbow Parentheses {{{
-Plug 'luochen1990/rainbow'
-
-let g:rainbow_active = 0
-map <leader>rp :RainbowToggle<CR>
-autocmd BufEnter *.clj RainbowToggleOn
-"}}}
-" Gutentags + Tagbar {{{
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
-
-nmap <leader>tt :TagbarToggle<CR><C-W>l
-let g:tagbar_autoclose = 1
-let g:gutentags_cache_dir = "~/.vim-cache/tags"
-" nnoremap <C-]> <C-w><C-]><C-W>T
-" vnoremap <C-]> <Esc><C-w><C-]><C-W>T
-"}}}
-" Signature (marks) {{{
-Plug 'kshenoy/vim-signature'
-" }}}
-" NERD Commenter {{{
-Plug 'scrooloose/nerdcommenter'
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-"}}}
-" undotree {{{
-Plug 'https://github.com/mbbill/undotree.git'
-nmap <leader>ut :UndotreeToggle<CR>
-"}}}
-call plug#end()
 "}}}
 
 "vim: set ts=4 sw=4 sts=4 ai et fdm=marker:
