@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'joshdick/onedark.vim'
 Plug 'wavded/vim-stylus'
+Plug 'vim-scripts/AnsiEsc.vim'
 call plug#end()
 "}}}
 
