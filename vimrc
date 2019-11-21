@@ -13,6 +13,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 Plug 'https://github.com/mbbill/undotree.git'
 Plug 'joshdick/onedark.vim'
+Plug 'wavded/vim-stylus'
 call plug#end()
 "}}}
 
