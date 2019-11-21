@@ -97,12 +97,7 @@ let mapleader=" "
 " Wurstfinger {{{
 command W w
 "}}}
-" scroll one screen line regardless of editor line length {{{
-:noremap    <Up> gk
-:noremap!   <Up> <C-O>gk
-:noremap    <Down> gj
-:noremap!   <Down> <C-O>gj
-
+" scroll one screen line regardless of editor line length with arrow keys{{{
 :noremap    k gk
 :noremap    j gj
 "}}}
