@@ -122,7 +122,7 @@ map <leader>t6 :bf<cr>:bn 5<cr>
 map <leader>t7 :bf<cr>:bn 6<cr>
 map <leader>t8 :bf<cr>:bn 7<cr>
 map <leader>t9 :bf<cr>:bn 8<cr>
-map <leader>t0 :bf<cr>:bn 9<cr>
+map <leader>t0 :bf<cr>:bp<cr>
 "}}}
 " Latex helpers {{{
 map <leader>lg o\includegraphics[width=\textwidth]{images/}19hi
