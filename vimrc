@@ -16,6 +16,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'wavded/vim-stylus'
 Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'slim-template/vim-slim'
 call plug#end()
 "}}}
 
@@ -96,6 +98,7 @@ let mapleader=" "
 "}}}
 " Wurstfinger {{{
 command W w
+noremap    K <nop>
 "}}}
 " scroll one screen line regardless of editor line length with arrow keys{{{
 :noremap    k gk
@@ -123,15 +126,25 @@ map <leader>t7 :bf<cr>:bn 6<cr>
 map <leader>t8 :bf<cr>:bn 7<cr>
 map <leader>t9 :bf<cr>:bn 8<cr>
 map <leader>t0 :bf<cr>:bp<cr>
+map <A-1> :bf<cr>
+map <A-2> :bf<cr>:bn 1<cr>
+map <A-3> :bf<cr>:bn 2<cr>
+map <A-4> :bf<cr>:bn 3<cr>
+map <A-5> :bf<cr>:bn 4<cr>
+map <A-6> :bf<cr>:bn 5<cr>
+map <A-7> :bf<cr>:bn 6<cr>
+map <A-8> :bf<cr>:bn 7<cr>
+map <A-9> :bf<cr>:bn 8<cr>
+map <A-0> :bf<cr>:bp<cr>
 "}}}
 " Latex helpers {{{
-map <leader>lg o\includegraphics[width=\textwidth]{images/}19hi
-map <leader>li o\begin{itemize}\end{itemize}ko\item 
-map <leader>le o\begin{enumerate}\end{enumerate}ko\item 
-map <leader>ld o\begin{description}\end{description}ko\item 
-map <leader>lfr o\begin{frame}{}\end{frame}k$i
-map <leader>lfi o\begin{figure}\centering\includegraphics[width=0.8\textwidth]{images/}\caption{}\label{}\end{figure}k$i
-map <leader>lc o\begin{columns}\begin{column}{.5\textwidth}\end{column}\begin{column}{.5\textwidth}\end{column}\end{columns}4k$o
+map <leader>lg cc\includegraphics[width=\textwidth]{images/}19hi
+map <leader>li cc\begin{itemize}\end{itemize}ko\item 
+map <leader>le cc\begin{enumerate}\end{enumerate}ko\item 
+map <leader>ld cc\begin{description}\end{description}ko\item 
+map <leader>lfr cc\begin{frame}{}\end{frame}k$i
+map <leader>lfi cc\begin{figure}\centering\includegraphics[width=0.8\textwidth]{images/}\caption{}\label{}\end{figure}k$i
+map <leader>lc cc\begin{columns}\begin{column}{.5\textwidth}\end{column}\begin{column}{.5\textwidth}\end{column}\end{columns}4k$o
 imap <c-l>mr \mathrm{}i
 imap <c-l>ms \mathsf{}i
 imap <c-l>mf \frac{}{}hhi
@@ -140,8 +153,8 @@ imap <c-l>mf \frac{}{}hhi
 nmap <c-s> :w<CR>
 imap <c-s> :w<CR>a
 "}}}
-" use l-; for deactivating search result highlighting {{{
-noremap <leader>; :let @/ = "" <cr>
+" use l-<space> for deactivating search result highlighting {{{
+noremap <leader><space> :let @/ = "" <cr>
 "}}}
 " Disable scrollwheel in insert-mode {{{
 imap <ScrollWheelUp> <nop>
@@ -157,8 +170,9 @@ noremap + <C-]>
 " Netrunner development {{{
 map <leader>no mZ?deftest<cr>wi^:test-refresh/focus <esc>'ZmZ
 map <leader>ni mZ?deftest<cr>wdf <esc>'ZmZ
-map <leader>nt :Exp ~/devel/netrunner/test/clj/game_test<cr>
+map <leader>nt :Exp ~/devel/netrunner/test/clj/game<cr>
 map <leader>nn :Exp ~/devel/netrunner/src/clj/game<cr>
+map <leader>nr :Exp ~/devel/netrunner/src/<cr>
 map <leader>np A(println (prompt-fmt :runner))(println (clojure.string/join "\n" (map :text (:log @state))))Vk=
 "}}}
 
@@ -183,6 +197,7 @@ nmap <leader>ut :UndotreeToggle<CR>
 nmap <leader>tt :TagbarToggle<CR><C-W>l
 let g:tagbar_autoclose = 1
 let g:gutentags_cache_dir = "~/.vim-cache/tags"
+let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor", ".git", "node_modules", "*.vim/bundle/*"]
 "}}}
 " NERD Commenter {{{
 " Add spaces after comment delimiters by default
