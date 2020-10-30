@@ -88,6 +88,7 @@ set listchars=tab:!·,trail:·
 "}}}
 " syntax highlighting {{{
 syntax on               " enable syntax highlighting
+map <leader>sr :syntax sync fromstart<CR>
 "}}}
 " fileencodings {{{
 set enc=utf-8
