@@ -18,6 +18,7 @@ Plug 'wavded/vim-stylus'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'slim-template/vim-slim'
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 "}}}
 
