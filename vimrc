@@ -32,6 +32,7 @@ set nu rnu              " show hybrid line numbers
 set shortmess=atI       " set shortmessages
 set modeline            " use modelines
 set laststatus=2
+set autochdir           " do all file operations relative to current file
 "}}}
 " 24-bit color {{{
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
