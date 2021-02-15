@@ -178,6 +178,9 @@ map <leader>nn :Exp ~/devel/netrunner/src/clj/game<cr>
 map <leader>nr :Exp ~/devel/netrunner/src/<cr>
 map <leader>np A(println (prompt-fmt :runner))(println (clojure.string/join "\n" (map :text (:log @state))))Vk=
 "}}}
+" No octal numbers {{{
+set nrformats-=octal
+" }}}
 
 " Plugin Settings {{{
 " Airline {{{
