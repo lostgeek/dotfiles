@@ -19,6 +19,7 @@ Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'slim-template/vim-slim'
 Plug 'tmhedberg/SimpylFold'
+Plug 'sirtaj/vim-openscad'
 call plug#end()
 "}}}
 
